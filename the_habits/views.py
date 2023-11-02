@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics
 
 from the_habits.models import Habit
+from the_habits.paginators import HabitPaginator
+from the_habits.permissions import IsOwnerOrSuperuser
 from the_habits.serializers import HabitSerializer
 
 
@@ -24,12 +26,14 @@ class HabitUpdateAPIView(generics.UpdateAPIView):
     """ Представление изменения привычки """
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
+    permission_classes = [IsOwnerOrSuperuser]
 
 
 class HabitListAPIView(generics.ListAPIView):
     """ Представление вывода всех привычек пользователя """
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
+    pagination_class = HabitPaginator
 
     def get_queryset(self):
         """
@@ -46,6 +50,7 @@ class HabitPublicListAPIView(generics.ListAPIView):
     """ Представление вывода всех публичных привычек """
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
+    pagination_class = HabitPaginator
 
     def get_queryset(self):
         """
@@ -62,3 +67,4 @@ class HabitDestroyAPIView(generics.DestroyAPIView):
     """ Представление удаления привычки пользователя """
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
+    permission_classes = [IsOwnerOrSuperuser]
