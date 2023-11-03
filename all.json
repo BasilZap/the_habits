@@ -1,0 +1,203 @@
+[
+  {
+    "model": "django_celery_beat.intervalschedule",
+    "pk": 1,
+    "fields": {
+      "every": 10,
+      "period": "seconds"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 1,
+    "fields": {
+      "minute": "0",
+      "hour": "4",
+      "day_of_week": "*",
+      "day_of_month": "*",
+      "month_of_year": "*",
+      "timezone": "UTC"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictasks",
+    "pk": 1,
+    "fields": {
+      "last_update": "2023-11-03T16:51:02.228Z"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 1,
+    "fields": {
+      "name": "send_user_reminder",
+      "task": "the_habits.tasks.send_habit_task",
+      "interval": 1,
+      "crontab": null,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": "2023-11-02T17:30:14Z",
+      "enabled": true,
+      "last_run_at": "2023-11-03T16:59:26.560Z",
+      "total_run_count": 349,
+      "date_changed": "2023-11-03T16:59:28.876Z",
+      "description": "Отправка пользователям напоминаний о наступлении времени выполнения задания"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 2,
+    "fields": {
+      "name": "celery.backend_cleanup",
+      "task": "celery.backend_cleanup",
+      "interval": null,
+      "crontab": 1,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": 43200,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2023-11-03T16:51:02.227Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Ll1LUDzXI4liC0uKibS5Gy$RqVXO1w2G7D6IqxGXDfpTH2E1cNwmbFgWEDEIWAR9J8=",
+      "last_login": "2023-11-02T17:28:13.439Z",
+      "is_superuser": true,
+      "first_name": "admin",
+      "last_name": "Superuser",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-11-01T18:14:26.214Z",
+      "email": "admin@adminov.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "telegram_id": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$T1jBN8gjjei4FQOk1smR4K$7JwV4lrIB2hzeUMt+sow0a2sMIrf0R90AQaPEDdoGfQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-11-02T17:45:06.773Z",
+      "email": "andrey.andreev@sky.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "telegram_id": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$4ccXRM6MfK1d1XyVOjK5Qx$pI3rDIf6fzsTK8YDmfzAhOQZw3f6p76zyX2wFaGNVv4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-11-02T17:45:36.360Z",
+      "email": "ivan.ivanov@sky.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "telegram_id": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$BgleTJeTbNPXCwou74GBy8$hTLAOlP4jg6wpTV47Nj1+2DTZoLMPzudDrigDwufxXw=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-11-02T17:46:00Z",
+      "email": "vasiliy.z@sky.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "telegram_id": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "the_habits.habit",
+    "pk": 1,
+    "fields": {
+      "action": "Доделать курсовик",
+      "habit_datetime": "2023-11-04T16:55:50Z",
+      "place": "дом",
+      "pleasant_sign": false,
+      "frequency": 1,
+      "related_habit": 5,
+      "reward": null,
+      "time_to_complete": 120,
+      "public_sign": false,
+      "owner": 4,
+      "launched": false
+    }
+  },
+  {
+    "model": "the_habits.habit",
+    "pk": 2,
+    "fields": {
+      "action": "Начать делать домашку",
+      "habit_datetime": "2023-11-02T17:57:14Z",
+      "place": "дом",
+      "pleasant_sign": true,
+      "frequency": 1,
+      "related_habit": null,
+      "reward": null,
+      "time_to_complete": 120,
+      "public_sign": false,
+      "owner": 4,
+      "launched": false
+    }
+  }
+]
