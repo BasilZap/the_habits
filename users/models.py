@@ -12,6 +12,7 @@ class User(AbstractUser):
     phone = models.CharField(max_length=35, verbose_name='Телефон', **NULLABLE)
     city = models.CharField(max_length=50, verbose_name='Город', **NULLABLE)
     avatar = models.ImageField(upload_to='users/', verbose_name='Аватар', **NULLABLE)
+    telegram_id = models.CharField(max_length=15, verbose_name='ID телеграм', **NULLABLE)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
