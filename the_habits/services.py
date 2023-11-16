@@ -14,4 +14,3 @@ def send_message(message, telegram_id):
     data = {'chat_id': telegram_id, 'text': message, "parse_mode": "HTML"}
     response = requests.post(url, data=data)
     return response.json()
-

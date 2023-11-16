@@ -9,4 +9,3 @@ class UserCreateAPIView(generics.CreateAPIView):
     model = User
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
-

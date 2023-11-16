@@ -201,5 +201,3 @@ class HabitTestCase(APITestCase):
     def tearDown(self):
         Habit.objects.all().delete()
         self.habit.delete()
-
-
