@@ -87,9 +87,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'the_habits',
-        'USER': 'postgres',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
     }
 }
 
@@ -160,7 +161,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://read-and-write.example.com",
 ]
 
-CELERY_BROKER_URL = "redis://localhost:6379/0"
-CELERY_BACKEND_RESULT = "redis://localhost:6379/0"
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER')
+CELERY_BACKEND_RESULT = os.getenv('CELERY_BACKEND')
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')

@@ -5,7 +5,10 @@ from django.core.management import BaseCommand
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        user = User.objects.create(
+        """
+        Команда создания суперпользователя
+        """
+        user = User.objects.get_or_create(
             email='admin@adminov.ru',
             first_name='admin',
             last_name='Superuser',
@@ -13,6 +16,11 @@ class Command(BaseCommand):
             is_superuser=True,
             is_active=True
         )
-
-        user.set_password('123456')
-        user.save()
+        # Если пользователь создался - задаем ему пароль
+        if user[1]:
+            new_user = user[0]
+            new_user.set_password('123456')
+            new_user.save()
+        # Если пользователь существует - сообщаем об этом в консоль
+        else:
+            print('Пользователь существует')
