@@ -1,4 +1,4 @@
-# Курсовая работа №8 "Docker".
+# Трекер полезных привычек. Django, Celery, Telegram, DRF, Docker.
 
 ## Функционал.
  
